@@ -32,7 +32,13 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 $routes->resource("driver"); // get put create delete
-$routes->post('user', 'UserAuthentication::index');
+$routes->post('auth', 'UserAuthentication::index');
+$routes->resource('bulan');
+$routes->resource('departemen');
+$routes->resource('kendaraan');
+$routes->resource('peminjaman');
+$routes->resource('user');
+$routes->resource('mainkendaraan');
 
 /*p
  * --------------------------------------------------------------------

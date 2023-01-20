@@ -13,8 +13,8 @@ class UserAuthenticationModel extends Model
 
   function getUsername($username)
   {
-    $this->table("user");
-    $data  = $this->getWhere(['username' => $username])->getRow();
+    $builder = $this->table("user");
+    $data  = $builder->getWhere(['username' => $username])->getRow();
     if (!$data) {
       throw new Exception("Data authentication not found");
     }

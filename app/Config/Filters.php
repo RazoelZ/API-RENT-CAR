@@ -63,11 +63,11 @@ class Filters extends BaseConfig
      * 'isLoggedIn' => ['before' => ['account/*', 'profiles/*']]
      */
     public array $filters = [
-        'Authentication' => [
-            'before' => [
-                'driver/*',
-                'driver/'
-            ]
-        ]
+        // 'Authentication' => [
+        //     'before' => [
+        //         'driver/*',
+        //         'driver/'
+        //     ]
+        // ]
     ];
 }

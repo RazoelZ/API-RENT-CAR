@@ -12,8 +12,8 @@ class TokenModel extends  Model
 
   function getToken($id)
   {
-    $builder = $this->table('token');
-    $data = $builder->where('id', $id)->first();
+    $builder = $this->table("token");
+    $data  = $builder->getWhere(['id' => $id])->getRowArray();
     return $data['token'];
   }
 }

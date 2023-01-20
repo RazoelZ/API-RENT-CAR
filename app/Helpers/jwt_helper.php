@@ -16,10 +16,7 @@ function getJWT($authheader)
 function validateJWT($encodedtoken)
 {
   $key = getenv('JWT_SECRET_KEY');
-  // $decodedtoken = JWT::decode($encodedtoken, $key, ['HS256']);
-  // $decodedToken = JWT::decode($encodedToken, new Key($key, 'HS256'));
   $decodedtoken = JWT::decode($encodedtoken, new Key($key, 'HS256'), ['HS256']);
-
 
   $userAuthenticationModel = new UserAuthenticationModel();
 
@@ -33,10 +30,9 @@ function createJWT($username)
   $expiredtime = $timerequest + $tokentime;
   $payload = [
 
+    "username" => $username,
     "iat" => $timerequest,
-    "nbf" => $timerequest,
     "exp" => $expiredtime,
-    "username" => $username
   ];
   $jwt = JWT::encode($payload, getenv("JWT_SECRET_KEY"), 'HS256');
   return $jwt;

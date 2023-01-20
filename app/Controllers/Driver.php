@@ -36,7 +36,8 @@ class Driver extends BaseController
                 "status" => 500,
                 "error" => $this->validator->getErrors(),
                 "messages" => [
-                    "error" => "Data gagal ditambahkan"
+                    "error" => "Data gagal ditambahkan",
+                    "data" => $data
                 ]
             ];
             return $this->respond($response);

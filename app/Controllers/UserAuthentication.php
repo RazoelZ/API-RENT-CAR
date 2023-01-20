@@ -15,7 +15,7 @@ class UserAuthentication extends BaseController
       "username" => [
         'rules' => 'required',
         'error' => [
-          'required' => 'Silahkan masukkan email anda',
+          'required' => 'Silahkan masukkan username anda',
         ]
       ],
       "password" => [
@@ -36,17 +36,15 @@ class UserAuthentication extends BaseController
     $password = $this->request->getVar('password');
 
     $data = $model->getUsername($username);
-    if ($data->password != md5($password)) {
+    if ($data->password != $password) {
       return $this->fail('Password anda salah');
     }
 
     helper('jwt');
     $response = [
-      'messages' => [
-        'success' => 'Login berhasil',
-        'data' => $data,
-        'access_token' => createJWT($username)
-      ],
+      'message' => 'Autentikasi / login berhasil',
+      'data' => $data,
+      'access_token' => createJWT($username)
     ];
     return $this->respond($response);
   }
