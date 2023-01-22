@@ -27,4 +27,29 @@ class Kendaraan extends BaseController
       return $this->failNotFound('Data tidak ditemukan');
     }
   }
+  public function create()
+  {
+
+    $data = $this->request->getPost();
+    if (!$this->validate($this->model->validationRules, $this->model->validationMessages)) {
+      $response = [
+        "status" => 500,
+        "error" => $this->validator->getErrors(),
+        "messages" => [
+          "error" => "Data gagal ditambahkan",
+          "data" => $data
+        ]
+      ];
+      return $this->respond($response);
+    }
+    $this->model->save($data);
+    $response = [
+      "status" => 200,
+      "error" => null,
+      "messages" => [
+        "success" => "Data berhasil ditambahkan"
+      ]
+    ];
+    return $this->respond($response);
+  }
 }
