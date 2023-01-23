@@ -31,16 +31,17 @@ class Peminjaman extends BaseController
   {
 
     $data = $this->request->getPost();
-    if (!$this->validate($this->model->validationRules, $this->model->validationMessages)) {
-      $response = [
-        "status" => 500,
-        "error" => $this->validator->getErrors(),
-        "messages" => [
-          "error" => "Data gagal ditambahkan"
-        ]
-      ];
-      return $this->respond($response);
-    }
+    // if (!$this->validate($this->model->validationRules, $this->model->validationMessages)) {
+    //   $response = [
+    //     "status" => 500,
+    //     "error" => $this->validator->getErrors(),
+    //     "messages" => [
+    //       "error" => "Data gagal ditambahkan",
+    //       "Data" => $data
+    //     ]
+    //   ];
+    //   return $this->respond($response);
+    // }
     $this->model->save($data);
     $response = [
       "status" => 200,

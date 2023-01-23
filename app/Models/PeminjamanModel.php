@@ -13,17 +13,7 @@ class PeminjamanModel extends Model
     "tgl_peminjaman", "jam_peminjaman",
     "km_awal", "saldo_tol_awal", "tgl_kembali",
     "jam_kembali", "km_akhir", "saldo_tol_akhir",
-    "keperluan", "driver", "tujuan", "bbm",
+    "keperluan", "driver", "tujuan", "hargabbm",
     "lampiran_tol", "lampiran_bbm", "total_km", "deleted_At"
-  ];
-
-  protected $validationRules = [
-    "tgl_peminjaman" => "required"
-  ];
-
-  protected $validationMessages = [
-    "nama" => [
-      "required" => "Tanggal Peminjaman harus diisi!"
-    ]
   ];
 }
