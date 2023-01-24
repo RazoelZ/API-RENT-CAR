@@ -56,9 +56,9 @@ class Peminjaman extends BaseController
   public function update($id = null)
   {
     $data = $this->request->getRawInput();
-    $data['id_driver'] = $id;
+    $data['id_peminjaman'] = $id;
 
-    $isExist = $this->model->getWhere(['id_driver' => $id])->getRow();
+    $isExist = $this->model->getWhere(['id_peminjaman' => $id])->getRow();
     if (!$isExist) {
       return $this->failNotFound("Data tidak ditemukan untuk id $id");
     }
@@ -78,7 +78,7 @@ class Peminjaman extends BaseController
 
   public function delete($id = null)
   {
-    $isExist = $this->model->getWhere(['id_driver' => $id])->getRow();
+    $isExist = $this->model->getWhere(['id_peminjaman' => $id])->getRow();
     if (!$isExist) {
       return $this->failNotFound("Data tidak ditemukan untuk id $id");
     }
