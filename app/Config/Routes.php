@@ -39,6 +39,7 @@ $routes->resource('kendaraan');
 $routes->resource('peminjaman');
 $routes->resource('user');
 $routes->resource('mainkendaraan');
+$routes->resource('historylog');
 
 /*p
  * --------------------------------------------------------------------
