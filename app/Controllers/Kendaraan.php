@@ -52,4 +52,26 @@ class Kendaraan extends BaseController
     ];
     return $this->respond($response);
   }
+  public function update($id = null)
+  {
+    $data = $this->request->getRawInput();
+    $data['id_kendaraan'] = $id;
+
+    $isExist = $this->model->getWhere(['id_kendaraan' => $id])->getRow();
+    if (!$isExist) {
+      return $this->failNotFound("Data tidak ditemukan untuk id $id");
+    }
+    if (!$this->model->save($data)) {
+      return $this->fail($this->model->errors());
+    }
+
+    $respond = [
+      "status" => 200,
+      "error" => null,
+      "messages" => [
+        "success" => "Data berhasil dengan id = $id di update"
+      ]
+    ];
+    return $this->respond($respond);
+  }
 }

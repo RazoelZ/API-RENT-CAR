@@ -14,7 +14,7 @@ class MainKendaraanModel extends Model
       ->join('departemen', 'departemen.id_departemen = kendaraan.id_departemen')
       ->select('kendaraan.id_kendaraan, departemen.nama_departemen,
        kendaraan.tipe_kendaraan, kendaraan.nomor_polisi, 
-       kendaraan.jenis_kendaraan, kendaraan.km, kendaraan.gambar')->get()->getResultArray();
+       kendaraan.jenis_kendaraan, kendaraan.km, kendaraan.gambar , kendaraan.pinjam')->get()->getResultArray();
   }
 
 
