@@ -31,15 +31,15 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
-$routes->resource("driver"); // get put create delete
-$routes->post('UserAuthentication', 'UserAuthentication::index');
+$routes->resource("api/driver"); // get put create delete
+$routes->post('api/UserAuthentication', 'UserAuthentication::index');
 $routes->resource('bulan');
-$routes->resource('departemen');
-$routes->resource('kendaraan');
-$routes->resource('peminjaman');
-$routes->resource('user');
-$routes->resource('mainkendaraan');
-$routes->resource('historylog');
+$routes->resource('api/departemen');
+$routes->resource('api/kendaraan');
+$routes->resource('api/peminjaman');
+$routes->resource('api/user');
+$routes->resource('api/mainkendaraan');
+$routes->resource('api/historylog');
 
 /*p
  * --------------------------------------------------------------------

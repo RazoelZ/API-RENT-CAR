@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\API;
 
 use App\Models\UserAuthenticationModel;
 use CodeIgniter\API\ResponseTrait;
+use App\Controllers\BaseController;
 
 class UserAuthentication extends BaseController
 {

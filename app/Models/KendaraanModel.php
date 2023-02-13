@@ -10,8 +10,8 @@ class KendaraanModel extends Model
   protected $primaryKey = "id_kendaraan";
   protected $foreignKey = 'id_departemen';
   protected $allowedFields = [
-    "nama_kendaraan", "jenis_kendaraan",
+    "jenis_kendaraan",
     "nomor_polisi", "tipe_kendaraan", "km",
-    "saldo_tol", "pinjam", "gambar"
+    "total_saldo_tol", "pinjam", "gambar"
   ];
 }

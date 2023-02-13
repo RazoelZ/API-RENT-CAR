@@ -2,25 +2,28 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\API\ResponseTrait;
-use App\Models\UserModel;
+namespace App\Controllers\API;
 
-class User extends BaseController
+use CodeIgniter\API\ResponseTrait;
+use App\Models\BulanModel;
+use App\Controllers\BaseController;
+
+class Bulan extends BaseController
 {
   use ResponseTrait;
   protected $model;
   function __construct()
   {
-    $this->model = new UserModel();
+    $this->model = new BulanModel();
   }
   public function index()
   {
-    $data = $this->model->orderBy('id_user', 'ASC')->findAll();
+    $data = $this->model->orderBy('id_bulan', 'ASC')->findAll();
     return $this->respond($data, 200);
   }
   public function show($id = null)
   {
-    $data = $this->model->getWhere(['id_user' => $id])->getRow();
+    $data = $this->model->getWhere(['id_bulan' => $id])->getRow();
     if ($data) {
       return $this->respond($data, 200);
     } else {

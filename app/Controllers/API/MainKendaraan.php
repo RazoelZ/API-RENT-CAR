@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\API;
 
 use CodeIgniter\API\ResponseTrait;
 use App\Models\MainKendaraanModel;
+use App\Controllers\BaseController;
 
 class MainKendaraan extends BaseController
 {
