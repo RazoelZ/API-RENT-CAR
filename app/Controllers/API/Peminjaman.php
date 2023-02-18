@@ -30,6 +30,7 @@ class Peminjaman extends BaseController
   }
   public function create()
   {
+    helper(['form', 'url']);
 
     $data = $this->request->getPost();
     if (!$this->validate($this->model->validationRules, $this->model->validationMessages)) {

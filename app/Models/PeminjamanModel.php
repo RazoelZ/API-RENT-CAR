@@ -21,6 +21,7 @@ class PeminjamanModel extends Model
     "tgl_peminjaman" => "required",
     "jam_peminjaman" => "required",
     "km_awal" => "required",
+    "saldo_tol_awal" => "required",
     "tujuan" => "required",
     "keperluan" => "required",
     "driver" => "required",
@@ -35,6 +36,9 @@ class PeminjamanModel extends Model
     ],
     "km_awal" => [
       "required" => "Km awal harus diisi!"
+    ],
+    "saldo_tol_awal" => [
+      "required" => "Saldo tol awal harus diisi!"
     ],
     "tujuan" => [
       "required" => "Tujuan harus diisi!"
