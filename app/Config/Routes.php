@@ -40,6 +40,9 @@ $routes->resource('api/peminjaman');
 $routes->resource('api/user');
 $routes->resource('api/mainkendaraan');
 $routes->resource('api/historylog');
+$routes->post('api/changepass', 'Changepass::index');
+$routes->post('api/uploadImage', 'peminjaman::uploadImage');
+
 
 /*p
  * --------------------------------------------------------------------

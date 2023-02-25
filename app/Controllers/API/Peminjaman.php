@@ -63,6 +63,14 @@ class Peminjaman extends BaseController
     if (!$isExist) {
       return $this->failNotFound("Data tidak ditemukan untuk id $id");
     }
+    //if request has file
+    if ($this->request->getFile('lampiran_bbm')) {
+      $lampiran_bbm = $this->request->getFile('lampiran_bbm');
+      $lampiran_bbm->move(WRITEPATH . '../public/assets/lampiran_bbm');
+      $lampiran_bbm_name = $lampiran_bbm->getName();
+      $data['lampiran_bbm'] = $lampiran_bbm_name;
+    }
+
     if (!$this->model->save($data)) {
       return $this->fail($this->model->errors());
     }
