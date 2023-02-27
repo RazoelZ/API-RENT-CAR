@@ -37,7 +37,7 @@ class UserAuthentication extends BaseController
     $password = $this->request->getVar('password');
 
     $data = $model->getUsername($username);
-    if ($data->password != $password) {
+    if ($data->password != md5($password)) {
       return $this->fail('Password anda salah');
     }
 
